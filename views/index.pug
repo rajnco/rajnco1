@@ -1,6 +1,17 @@
 doctype html
-html
-    head 
-        title
-    body 
-        h1 = "Hello Pug"
+    html
+        head
+            title
+        body
+            h1 Hello Pug
+            h6 Rajkumar
+
+            ul
+                each type in types
+                    li= type.id + ': ' + type.desc
+                        ul
+                            each item in items
+                                if item.id == type.id
+                                    a(href=item.url)= item.url
+                                    br
+
