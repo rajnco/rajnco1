@@ -1,16 +1,21 @@
 doctype html
 html
     head
+        <style>         .menu {         float:left;         width:25%;  }         .mainContent {  float:right;        width:74%;   }
+        </style>
         title
     body
-        h1 Hello Pug
-
-            ul
-                each type in types
-                    li= type.id + ': ' + type.desc
-                        ul
-                            each item in items
-                                if item.id == type.id
-                                    a(href=item.url target="_blank")= item.url
-                                    br
+        //h4 Hello Pug
+        div.mainContent
+            iframe(name="target" width='100%' ) 
+            // width="84%" height="100%" frameborder="0")
+        div.menu
+        ul
+            each type in types
+                li= type.id + ': ' + type.desc
+                    ul
+                    each item in items
+                        if item.id == type.id
+                            a(href=item.url target="target")= item.url
+                            br
 
